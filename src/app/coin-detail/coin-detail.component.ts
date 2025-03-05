@@ -5,7 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { CurrencyPipe, DatePipe, TitleCasePipe } from '@angular/common';
 import { ChartConfiguration, ChartType } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
-
+t
 @Component({
   selector: 'app-coin-detail',
   standalone: true,
