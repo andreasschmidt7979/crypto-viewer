@@ -3,23 +3,27 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "sandbox": {
+    "cryptoviewer": {
       "projectType": "application",
-      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": {
-              "base": "dist/sandbox"
+              "base": "dist/cryptoviewer"
             },
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
-              "zone.js"
+              "src/polyfills.ts"
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
@@ -69,10 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "sandbox:build:production"
+              "buildTarget": "cryptoviewer:build:production"
             },
             "development": {
-              "buildTarget": "sandbox:build:development"
+              "buildTarget": "cryptoviewer:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "sandbox:build"
+            "browserTarget": "cryptoviewer:build"
           }
         },
         "test": {
