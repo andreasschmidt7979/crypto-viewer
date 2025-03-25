@@ -12,10 +12,10 @@ import { filter } from 'rxjs/operators';
 import { CommonModule } from '@angular/common';
 import { RippleModule } from 'primeng/ripple';
 import { MenuItem } from 'primeng/api';
-import { LayoutService } from '../service/layout.service';
+import { LayoutService } from '../../service/layout.service';
 
 @Component({
-  selector: 'app-manuitem',
+  selector: '[app-manuitem]',
   imports: [CommonModule, RouterModule, RippleModule],
   templateUrl: './manuitem.component.html',
   styleUrl: './manuitem.component.scss',

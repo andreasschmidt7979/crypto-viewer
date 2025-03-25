@@ -68,9 +68,9 @@ export class LayoutService {
     () =>
       this.layoutState().overlayMenuActive ||
       this.layoutState().staticMenuMobileActive
-  );
+  );isDarkTheme
 
-  isDarkTheme = computed(() => this.layoutConfig().darkTheme);
+   = computed(() => this.layoutConfig().darkTheme);
 
   getPrimary = computed(() => this.layoutConfig().primary);
 
