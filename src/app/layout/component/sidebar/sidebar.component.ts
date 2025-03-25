@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 import { ManuComponent } from '../manu/manu.component';
 
 @Component({
@@ -8,5 +8,5 @@ import { ManuComponent } from '../manu/manu.component';
   styleUrl: './sidebar.component.scss'
 })
 export class SidebarComponent {
-
+  constructor(public el: ElementRef) {}
 }
