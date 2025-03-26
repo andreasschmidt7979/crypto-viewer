@@ -2,16 +2,16 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MenuItem } from 'primeng/api';
-import { ManuitemComponent } from '../manuitem/manuitem.component';
+import { MenuitemComponent } from '../menuitem/menuitem.component';
 
 @Component({
   selector: 'app-manu',
   standalone: true,
-  imports: [CommonModule, ManuitemComponent, RouterModule],
-  templateUrl: './manu.component.html',
-  styleUrl: './manu.component.scss',
+  imports: [CommonModule, MenuitemComponent, RouterModule],
+  templateUrl: './menu.component.html',
+  styleUrl: './menu.component.scss',
 })
-export class ManuComponent {
+export class MenuComponent {
   model: MenuItem[] = [];
 
   ngOnInit() {
@@ -65,50 +65,6 @@ export class ManuComponent {
                       label: 'Empty',
                       icon: 'pi pi-fw pi-circle-off',
                       routerLink: ['/pages/empty']
-                  }
-              ]
-          },
-          {
-              label: 'Hierarchy',
-              items: [
-                  {
-                      label: 'Submenu 1',
-                      icon: 'pi pi-fw pi-bookmark',
-                      items: [
-                          {
-                              label: 'Submenu 1.1',
-                              icon: 'pi pi-fw pi-bookmark',
-                              items: [
-                                  { label: 'Submenu 1.1.1', icon: 'pi pi-fw pi-bookmark' },
-                                  { label: 'Submenu 1.1.2', icon: 'pi pi-fw pi-bookmark' },
-                                  { label: 'Submenu 1.1.3', icon: 'pi pi-fw pi-bookmark' }
-                              ]
-                          },
-                          {
-                              label: 'Submenu 1.2',
-                              icon: 'pi pi-fw pi-bookmark',
-                              items: [{ label: 'Submenu 1.2.1', icon: 'pi pi-fw pi-bookmark' }]
-                          }
-                      ]
-                  },
-                  {
-                      label: 'Submenu 2',
-                      icon: 'pi pi-fw pi-bookmark',
-                      items: [
-                          {
-                              label: 'Submenu 2.1',
-                              icon: 'pi pi-fw pi-bookmark',
-                              items: [
-                                  { label: 'Submenu 2.1.1', icon: 'pi pi-fw pi-bookmark' },
-                                  { label: 'Submenu 2.1.2', icon: 'pi pi-fw pi-bookmark' }
-                              ]
-                          },
-                          {
-                              label: 'Submenu 2.2',
-                              icon: 'pi pi-fw pi-bookmark',
-                              items: [{ label: 'Submenu 2.2.1', icon: 'pi pi-fw pi-bookmark' }]
-                          }
-                      ]
                   }
               ]
           },

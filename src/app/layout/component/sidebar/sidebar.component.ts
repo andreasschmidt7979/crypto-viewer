@@ -1,9 +1,9 @@
 import { Component, ElementRef } from '@angular/core';
-import { ManuComponent } from '../manu/manu.component';
+import { MenuComponent } from '../menu/menu.component';
 
 @Component({
   selector: 'app-sidebar',
-  imports: [ManuComponent],
+  imports: [MenuComponent],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'
 })

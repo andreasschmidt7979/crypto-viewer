@@ -26,6 +26,7 @@
       }
     ],
     "no-inline-styles": "off",
-    "axe/text-alternatives": "off"
+    "axe/text-alternatives": "off",
+    "typescript-config/consistent-casing": "off"
   }
 }

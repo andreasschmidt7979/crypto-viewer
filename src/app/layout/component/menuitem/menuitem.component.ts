@@ -15,10 +15,10 @@ import { MenuItem } from 'primeng/api';
 import { LayoutService } from '../../service/layout.service';
 
 @Component({
-  selector: '[app-manuitem]',
+  selector: '[app-menuitem]',
   imports: [CommonModule, RouterModule, RippleModule],
-  templateUrl: './manuitem.component.html',
-  styleUrl: './manuitem.component.scss',
+  templateUrl: './menuitem.component.html',
+  styleUrl: './menuitem.component.scss',
   animations: [
     trigger('children', [
       state(
@@ -41,7 +41,7 @@ import { LayoutService } from '../../service/layout.service';
   ],
   providers: [LayoutService],
 })
-export class ManuitemComponent {
+export class MenuitemComponent {
   @Input() item!: MenuItem;
 
   @Input() index!: number;

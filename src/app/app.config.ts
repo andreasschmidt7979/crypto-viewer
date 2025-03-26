@@ -7,13 +7,13 @@ import {
 import Aura from '@primeng/themes/aura';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideHttpClient, withFetch } from '@angular/common/http';
-import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
+/*import { provideCharts, withDefaultRegisterables } from 'ng2-charts';*/
 import { providePrimeNG } from 'primeng/config';
 import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideZoneChangeDetection({ eventCoalescing: true }),
+   // provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(
       routes,
       withInMemoryScrolling({
@@ -24,7 +24,7 @@ export const appConfig: ApplicationConfig = {
     ),
     provideAnimationsAsync(),
     provideHttpClient(withFetch()),
-    provideCharts(withDefaultRegisterables()),
+    //provideCharts(withDefaultRegisterables()),
     providePrimeNG({
       theme: { preset: Aura, options: { darkModeSelector: '.app-dark' } },
     }),
