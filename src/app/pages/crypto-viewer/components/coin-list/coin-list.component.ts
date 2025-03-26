@@ -1,5 +1,5 @@
-import { ApiService } from './../service/api.service';
-import { CurrencyService } from './../service/currency.service';
+import { ApiService } from './../../../service/api.service';
+import { CurrencyService } from './../../../service/currency.service';
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';

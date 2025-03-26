@@ -1,5 +1,5 @@
-import { CurrencyService } from './../service/currency.service';
-import { ApiService } from './../service/api.service';
+import { CurrencyService } from '../../../service/currency.service';
+import { ApiService } from '../../../service/api.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CurrencyPipe, DatePipe, TitleCasePipe } from '@angular/common';

@@ -52,9 +52,9 @@ export class MenuComponent {
                       ]
                   },
                   {
-                      label: 'Crud',
-                      icon: 'pi pi-fw pi-pencil',
-                      routerLink: ['/pages/crud']
+                      label: 'Crypto Viewer',
+                      icon: 'pi pi-fw pi-bitcoin',
+                      routerLink: ['/pages/crypto-viewer']
                   },
                   {
                       label: 'Not Found',
