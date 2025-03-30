@@ -54,7 +54,7 @@ export class MenuComponent {
                   {
                       label: 'Crypto Viewer',
                       icon: 'pi pi-fw pi-bitcoin',
-                      routerLink: ['/pages/crypto-viewer']
+                      routerLink: ['pages/coin-list']
                   },
                   {
                       label: 'Not Found',
@@ -79,7 +79,7 @@ export class MenuComponent {
                   {
                       label: 'View Source',
                       icon: 'pi pi-fw pi-github',
-                      url: 'https://github.com/primefaces/sakai-ng',
+                      url: 'https://github.com/andreasschmidt7979/crypto-viewer/tree/BranchPrimeNG',
                       target: '_blank'
                   }
               ]

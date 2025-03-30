@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSelectModule } from '@angular/material/select';
@@ -12,6 +13,7 @@ import { CurrencyService } from '../service/currency.service';
   selector: 'app-crypto-viewer',
   imports: [
     CommonModule,
+    RouterOutlet,
     FormsModule,
     MatToolbarModule,
     MatSelectModule,

@@ -7,8 +7,10 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @Component({
   selector: 'app-coin-list',
@@ -20,11 +22,14 @@ import { MatTableModule } from '@angular/material/table';
     MatPaginatorModule,
     MatTableModule,
     MatSortModule,
+    MatSelectModule,
+    MatToolbarModule
   ],
   templateUrl: './coin-list.component.html',
   styleUrl: './coin-list.component.css',
 })
 export class CoinListComponent {
+  selectedCurrency: string = 'EUR';
   bannerData: any = [];
   currency: string = 'EUR';
   dataSource!: MatTableDataSource<any>;
@@ -53,6 +58,10 @@ export class CoinListComponent {
       this.getBannerData();
     });
   }
+  sendCurrency($event: any) {
+    console.log($event);
+    this.currencyService.setCurrency($event);
+  }
 
   getBannerData() {
     this.api.getTrendingCurrency(this.currency).subscribe((res) => {
@@ -80,6 +89,6 @@ export class CoinListComponent {
   }
 
   gotoDetails(row: any) {
-    this.router.navigate(['coin-detail', row.id]);
+    this.router.navigate(['pages/coin-detail', row.id]);
   }
 }

@@ -1,3 +1,19 @@
+<mat-toolbar color="primary">
+  <span>CRYPTO</span>
+  <span class="example-spacer"></span>
+  <mat-form-field appearance="fill">
+    <mat-label>Select Currancy</mat-label>
+    <mat-select
+      (valueChange)="sendCurrency($event)"
+      class="text-sm"
+      selectedCurrency
+    >
+      <mat-option style="background-color: white;" value="EUR">EUR</mat-option>
+      <mat-option style="background-color: white;" value="USD">USD</mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-toolbar>
+
 <div class="banner">
   <div class="container">
     <div class="header">
@@ -5,7 +21,7 @@
       <h6>Check all the crypto currency lastest updates</h6>
     </div>
     <div class="sub-header"></div>
-    <marquee
+   <!-- <marquee
       behavior="scroll"
       onmouseover="stop()"
       onmouseout="start()"
@@ -26,7 +42,7 @@
           </div>
         </ng-container>
       </div>
-    </marquee>
+    </marquee> -->
   </div>
 </div>
 
@@ -35,10 +51,10 @@
   <mat-form-field appearance="fill">
     <mat-label>Filter</mat-label>
     <input
-      style="color: aliceblue"
+      style="color: rgb(0, 0, 0)"
       matInput
       (keyup)="applyFilter($event)"
-      placeholder="Ex. Mia"
+      placeholder="Ex. Bitcoin"
       #input
     />
   </mat-form-field>
@@ -98,4 +114,3 @@
       aria-label="Select page of users"
     ></mat-paginator>
   </div>
-</div>

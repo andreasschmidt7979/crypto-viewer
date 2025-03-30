@@ -1,3 +1,7 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
 .header {
   height: 40%;
   display: flex;
@@ -23,8 +27,8 @@
 }
 
 .banner {
-  background-image: url("../../assets/banner2.jpg");
-  height: 400px;
+  background-image: url("../../../../../assets/banner2.jpg");
+  height: 100px;
   width: 100%;
 }
 
@@ -66,11 +70,11 @@ table {
 td,
 th {
   width: 25%;
-  color: #fff;
+  color: #000000;
 }
 
 :host ::ng-deep .mat-sort-header-content {
-  color: #fff;
+  color: #000000;
 }
 
 :host ::ng-deep .mat-paginator-outer-container {
