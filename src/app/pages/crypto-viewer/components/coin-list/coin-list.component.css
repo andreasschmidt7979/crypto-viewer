@@ -11,7 +11,7 @@
   color: #fff;
   h2 {
     font-weight: bold;
-    margin-bottom: 15px;
+    margin-bottom: 0px;
     font-size: 3.75rem;
     line-height: 1.2;
     letter-spacing: -0.0083em;
@@ -28,7 +28,7 @@
 
 .banner {
   background-image: url("../../../../../assets/banner2.jpg");
-  height: 100px;
+  height: 200px;
   width: 100%;
 }
 
@@ -41,9 +41,9 @@
 .card {
   border: 0;
   background: transparent;
-  color: #fff;
-  padding: 10px;
-  margin: 40px;
+  color: #000000;
+  padding: 0px;
+  margin: 0px;
   width: 100px;
   height: 200px;
   img {
