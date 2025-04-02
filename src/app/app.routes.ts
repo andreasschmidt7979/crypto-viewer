@@ -17,4 +17,9 @@ export const routes: Routes = [
   },
   { path: 'coin-list', component: CoinListComponent },
   { path: 'coin-detail/:id', component: CoinDetailComponent },
+  // {
+  //   path: 'react-component',
+  //   loadComponent: () =>
+  //     import('./react/ng-react.directive').then((m) => m.ReactComponentDirective),
+  // },
 ];

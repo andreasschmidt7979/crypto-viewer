@@ -33,6 +33,7 @@
     "primeclt": "^0.1.5",
     "primeicons": "^7.0.0",
     "tailwindcss-primeui": "^0.5.1",
+    "react2angular": "^4.0.6",
     "rxjs": "~7.8.0",
     "tslib": "^2.4.0",
     "zone.js": "~0.15.0"
