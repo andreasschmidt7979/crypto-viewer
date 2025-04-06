@@ -12,14 +12,16 @@ export const routes: Routes = [
     children: [
       { path: '', component: Dashboard },
       { path: 'documentation', component: DocumentationComponent },
-      { path: 'pages', loadChildren: () => import('./pages/pages.routes') }
-    ]
+      { path: 'pages', loadChildren: () => import('./pages/pages.routes') },
+    ],
   },
   { path: 'coin-list', component: CoinListComponent },
   { path: 'coin-detail/:id', component: CoinDetailComponent },
   // {
-  //   path: 'react-component',
+  //   path: 'app-react-comp',
   //   loadComponent: () =>
-  //     import('./react/ng-react.directive').then((m) => m.ReactComponentDirective),
+  //     import('./react/react-comp/react-comp.component').then(
+  //       (m) => m.ReactCompComponent
+  //     ),
   // },
 ];
