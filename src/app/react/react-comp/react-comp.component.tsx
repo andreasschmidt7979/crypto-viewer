@@ -14,7 +14,7 @@ import App from "../App";
 export class ReactCompComponent {
   ngOnInit(): void {
     const root = ReactDOM.createRoot(
-      document.getElementById("react-comp") as HTMLElement
+      document.getElementById("app-react-comp") as HTMLElement
     );
     root.render(
       <React.StrictMode>
