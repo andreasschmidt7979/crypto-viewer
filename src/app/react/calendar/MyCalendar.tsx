@@ -13,7 +13,7 @@ export default function MyCalendar() {
   return (
     <div className="MyCalendar">
       <header>
-        <h1>Calendar</h1>
+        <h1 style={{ margin: 20, padding: 30 }}>Calendar</h1>
       </header>
       <div className="MyCalendar__container">
         <main className="MyCalendar__container__content">

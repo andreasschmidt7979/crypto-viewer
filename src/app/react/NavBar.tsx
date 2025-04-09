@@ -47,52 +47,54 @@ export const NavBar = () => {
 
   return (
     // <header className="NavBarHeader" style={{color: 'red', fontSize: 20}}>
-      <nav className="NavBarHeader" style={{fontSize: 20, fontWeight: 700 }}>
-        <div>
-          <ul
-            className={cn(
-              "flex items-center gap-8",
-              isMenuOpen &&
-                "bg-neutral-700 flex-col fixed top-[--navbar-height] right-0 bottom-0 w-1/2 p-8 transform transition-transform duration-300 ease-in-out translate-x-0",
-              !isMenuOpen &&
-                isMobile &&
-                "bg-neutral-700 flex-col fixed top-[--navbar-height] right-0 bottom-0 w-1/2 p-8 transform transition-transform duration-300 ease-in-out translate-x-full"
-            )}
-          >
-            {navLinks.map((link) => (
-              <li key={link.name}>
-                <NavLink
-                  to={link.path}
-                  className={({ isActive }) =>
-                    isActive ? "text-sky-500" : "text-secondary"
-                  }
-                  onClick={closeMenuOnMobile}
-                >
-                  {link.name}
-                </NavLink>
-              </li>
-            ))}
-            <a
-              href="https://chinwike.space"
-              className="rounded-lg py-2 px-4 bg-[#1FABEB]"
-            >
-              Explore Further
-            </a>
-          </ul>
-        </div>
-
-        <button
-          aria-labelledby="Menu Toggle Button"
-          className="block md:hidden"
-          onClick={toggleMenu}
+    <nav className="NavBarHeader" style={{ fontSize: 20, fontWeight: 700 }}>
+      <div>
+        <ul
+          style={{ margin: 20, padding: 0 }}
+          // style={{ display: "inline-block", float: "left" }}
+          // className={cn(
+          //   "flex items-center gap-8",
+          //   isMenuOpen &&
+          //     "bg-neutral-700 flex-col fixed top-[--navbar-height] right-0 bottom-0 w-1/2 p-8 transform transition-transform duration-300 ease-in-out translate-x-0",
+          //   !isMenuOpen &&
+          //     isMobile &&
+          //     "bg-neutral-700 flex-col fixed top-[--navbar-height] right-0 bottom-0 w-1/2 p-8 transform transition-transform duration-300 ease-in-out translate-x-full"
+          // )}
         >
-          {isMenuOpen ? (
-            <XIcon className="size-6 text-secondary" />
-          ) : (
-            <MenuIcon className="size-6 text-secondary" />
-          )}
-        </button>
-      </nav>
+          {navLinks.map((link) => (
+            <li key={link.name} style={{ float: "left", margin: 10 }}>
+              <NavLink
+                to={link.path}
+                className={({ isActive }) =>
+                  isActive ? "text-sky-500" : "text-secondary"
+                }
+                onClick={closeMenuOnMobile}
+              >
+                {link.name}
+              </NavLink>
+            </li>
+          ))}
+          {/* <a
+            href="https://chinwike.space"
+            className="rounded-lg py-2 px-4 bg-[#1FABEB]"
+          >
+            Explore Further
+          </a> */}
+        </ul>
+      </div>
+
+      {/* <button
+        aria-labelledby="Menu Toggle Button"
+        className="block md:hidden"
+        onClick={toggleMenu}
+      >
+        {isMenuOpen ? (
+          <XIcon className="size-2" />
+        ) : (
+          <MenuIcon className="size-2" />
+        )}
+      </button> */}
+    </nav>
     // </header>
   );
 };
