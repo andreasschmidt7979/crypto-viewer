@@ -16,16 +16,16 @@ const navLinks: NavLinkType[] = [
     path: "/",
   },
   {
-    name: "About",
-    path: "/about",
+    name: "Calendar",
+    path: "/calendar",
   },
   {
-    name: "Pricing",
-    path: "/pricing",
+    name: "Calculator",
+    path: "/calculator",
   },
   {
-    name: "Contact",
-    path: "/contact",
+    name: "Back",
+    path: "-1",
   },
 ];
 
@@ -46,11 +46,8 @@ export const NavBar = () => {
   };
 
   return (
-    <header className="fixed w-full px-8 shadow-sm shadow-neutral-500 h-[--navbar-height] flex items-center">
-      <nav className="flex justify-between items-center w-full">
-        <NavLink to="/" className="font-bold">
-          NavigationBar
-        </NavLink>
+    // <header className="NavBarHeader" style={{color: 'red', fontSize: 20}}>
+      <nav className="NavBarHeader" style={{fontSize: 20, fontWeight: 700 }}>
         <div>
           <ul
             className={cn(
@@ -96,7 +93,7 @@ export const NavBar = () => {
           )}
         </button>
       </nav>
-    </header>
+    // </header>
   );
 };
 

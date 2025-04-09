@@ -9,7 +9,7 @@ const App = () => {
     <>
       <NavBar />
       <Routes>
-        <Route path="/" element={<NavBar />} />
+        <Route path="/" element={"Select a React App"} />
         <Route path="/pages/app-react-comp" element={<MyCalendar />} />
         <Route path="/calendar" element={<MyCalendar />} />
         <Route path="/calculator" element={<Calculator />} />

@@ -1,28 +1,15 @@
-/* html,
-body {
-  height: 100%;
-}
-
-body {
-  margin: 0;
-  font-family: Segoe UI, Tahoma, sans-serif;
-} */
-
-h1 {
-  fondasdaet-size: 5rem;
-  color: red;
+/* .MyCalendar h1 {
+  fondasdaet-size: 5rem !important;
+  color: red !important;
   margin: 50;
   border: 50px solid black;
 }
-
+*/
 .MyCalendar {
   display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
-  background-color: #f0f0f0;
-  padding: 20px;
+  color: red;
 }
+/*
 .MyCalendar input,
 .MyCalendar button {
   font: inherit;
@@ -64,6 +51,6 @@ h1 {
   padding-top: 1em;
 }
 
-.MyCalendar__container__content .react-calendar {
+.MyCalendar__container__content react-calendar--doubleView {
   margin: 0 auto;
-}
+} */
