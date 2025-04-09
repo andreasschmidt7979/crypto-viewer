@@ -61,18 +61,7 @@ export class MenuComponent {
           {
             label: 'React Apps',
             icon: 'pi pi-fw pi-verified',
-            items: [
-              {
-                label: 'Calendar',
-                icon: 'pi pi-fw pi-calendar',
-                routerLink: ['/auth/login'],
-              },
-              {
-                label: 'React',
-                icon: 'pi pi-fw pi-verified',
-                routerLink: ['/pages/app-react-comp'],
-              },
-            ],
+            routerLink: ['/pages/app-react-comp'],
           },
           {
             label: 'Not Found',

@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import Calendar from "react-calendar";
-import "react-calendar/dist/Calendar.css";
-
 import "./MyCalendar.css";
+import "react-calendar/dist/Calendar.css";
 
 type ValuePiece = Date | null;
 
@@ -16,8 +15,8 @@ export default function MyCalendar() {
       <header>
         <h1>Calendar</h1>
       </header>
-      <div className="Sample__container">
-        <main className="Sample__container__content">
+      <div className="MyCalendar__container">
+        <main className="MyCalendar__container__content">
           <Calendar onChange={onChange} showWeekNumbers value={value} />
         </main>
       </div>

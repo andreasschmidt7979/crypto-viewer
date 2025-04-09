@@ -1,4 +1,4 @@
-html,
+/* html,
 body {
   height: 100%;
 }
@@ -6,26 +6,42 @@ body {
 body {
   margin: 0;
   font-family: Segoe UI, Tahoma, sans-serif;
+} */
+
+h1 {
+  fondasdaet-size: 5rem;
+  color: red;
+  margin: 50;
+  border: 50px solid black;
 }
 
-.Sample input,
-.Sample button {
+.MyCalendar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+.MyCalendar input,
+.MyCalendar button {
   font: inherit;
 }
 
-.Sample header {
+.MyCalendar header {
+  padding-top: 50px;
   background-color: #323639;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
   padding: 20px;
   color: white;
 }
 
-.Sample header h1 {
-  font-size: inherit;
+.MyCalendar header h1 {
+  font-size: 2em;
   margin: 0;
 }
 
-.Sample__container {
+.MyCalendar__container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -34,11 +50,11 @@ body {
   padding: 10px;
 }
 
-.Sample__container > * > * {
+.MyCalendar__container > * > * {
   margin: 10px;
 }
 
-.Sample__container__content {
+.MyCalendar__container__content {
   display: flex;
   max-width: 100%;
   flex-basis: 420px;
@@ -48,6 +64,6 @@ body {
   padding-top: 1em;
 }
 
-.Sample__container__content .react-calendar {
+.MyCalendar__container__content .react-calendar {
   margin: 0 auto;
 }
