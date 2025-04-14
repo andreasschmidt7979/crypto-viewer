@@ -1,57 +1,117 @@
-import * as React from "react";
-import { Slot } from "@radix-ui/react-slot";
-import { cva, type VariantProps } from "class-variance-authority";
+import React, { FunctionComponent } from "react";
 
-import { cn } from "./lib/utils";
+import styled, { css } from "styled-components";
 
-const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
-  {
-    variants: {
-      variant: {
-        default:
-          "bg-primary text-primary-foreground shadow hover:bg-primary/90",
-        destructive:
-          "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
-        outline:
-          "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
-        secondary:
-          "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
-      },
-      size: {
-        default: "h-9 px-4 py-2",
-        sm: "h-8 rounded-md px-3 text-xs",
-        lg: "h-10 rounded-md px-8",
-        icon: "h-9 w-9",
-      },
-    },
-    defaultVariants: {
-      variant: "default",
-      size: "default",
-    },
-  }
-);
-
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
-  asChild?: boolean;
+interface ButtonProps {
+  children: React.ReactNode;
+  color?: "red" | "green" | "dark";
+  isLarge?: boolean;
+  onClick?: () => void;
 }
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : "button";
-    return (
-      <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
-        ref={ref}
-        {...props}
-      />
-    );
-  }
-);
-Button.displayName = "Button";
+const colorToCss = (color: ButtonProps["color"]) => {
+  switch (color) {
+    case "red":
+      return css`
+        background-color: #c04444;
+        color: #fff;
 
-export { Button };
+        &:hover,
+        &:focus {
+          background-color: #af3b3b;
+        }
+      `;
+    case "green":
+      return css`
+        background-color: #018645;
+        color: #fff;
+
+        &:hover,
+        &:focus {
+          background-color: #016d38;
+        }
+      `;
+    case "dark":
+      return css`
+        background-color: #272727;
+        color: #c5830d;
+
+        &:hover,
+        &:focus {
+          background-color: #1a1a1a;
+        }
+      `;
+  }
+
+  return css`
+    background-color: #2e2e2e;
+    color: #fff;
+
+    &:hover,
+    &:focus {
+      background-color: #212121;
+    }
+  `;
+};
+
+export const StyledButton = styled.button<ButtonProps>`
+  font-family: inherit;
+  font-size: inherit;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 0;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  transition: background-color 0.15s ease-in-out, opacity 0.15s ease-in-out;
+  ${({ color }) => colorToCss(color)}
+  ${({ isLarge }) =>
+    isLarge &&
+    css`
+      grid-column-end: span 2;
+    `}
+
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+
+  &:focus {
+    outline: 0;
+  }
+
+  :after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform 0.3s, opacity 1s;
+  }
+
+  :active:after {
+    transform: scale(0, 0);
+    opacity: 0.2;
+    transition: 0s;
+  }
+`;
+
+export const Button: FunctionComponent<ButtonProps> = ({
+  children,
+  color,
+  isLarge,
+  onClick,
+}) => {
+  return (
+    <StyledButton color={color} isLarge={isLarge} onClick={onClick}>
+      {children}
+    </StyledButton>
+  );
+};
+
+export default Button;

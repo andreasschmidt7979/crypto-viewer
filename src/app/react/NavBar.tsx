@@ -1,9 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { MenuIcon, XIcon } from "lucide-react";
 import { useViewportSize } from "@mantine/hooks";
-import { cn } from "./calculator/lib/utils";
 
 interface NavLinkType {
   name: string;
@@ -22,6 +20,10 @@ const navLinks: NavLinkType[] = [
   {
     name: "Calculator",
     path: "/calculator",
+  },
+  {
+    name: "Wheather",
+    path: "/weather",
   },
   {
     name: "Back",
@@ -50,7 +52,7 @@ export const NavBar = () => {
     <nav className="NavBarHeader" style={{ fontSize: 20, fontWeight: 700 }}>
       <div>
         <ul
-          style={{ margin: 20, padding: 0 }}
+          style={{ margin: 0, padding: 0, height: 50 }}
           // style={{ display: "inline-block", float: "left" }}
           // className={cn(
           //   "flex items-center gap-8",

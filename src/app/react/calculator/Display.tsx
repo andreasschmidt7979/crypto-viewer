@@ -1,40 +1,58 @@
-import React from "react";
-import "./Display.css";
+import React, { FunctionComponent } from "react";
+import styled from "styled-components";
 
-const INTEGER_FORMATTER = new Intl.NumberFormat("en-us", {
-  maximumFractionDigits: undefined,
-});
-
-function formatOperand(operand: string | number | null) {
-  if (operand == null) return;
-  const [integer, decimal] = operand.toString().split(".");
-  if (decimal == null) return INTEGER_FORMATTER.format(parseInt(integer));
-  return `${INTEGER_FORMATTER.format(parseInt(integer))}.${decimal}`;
+interface DisplayProps {
+  hasMemory: boolean;
+  expression: string;
+  value: string;
 }
 
-type DisplayType = {
-  currentOperand: string | number | null;
-  previousOperand: string | number | null;
-  operation: string | null;
-};
+const StyledIndicatorList = styled.div`
+  font-size: 0.75em;
+  line-height: 1;
+  opacity: 0.4;
+  text-align: right;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.25em;
+  min-height: 1em;
+`;
 
-function Display({ currentOperand, previousOperand, operation }: DisplayType) {
+const StyledExpression = styled.span`
+  margin-left: auto;
+`;
+
+const StyleScreen = styled.div`
+  font-size: 2.5em;
+  min-height: 1.4em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+`;
+
+const StyledDisplay = styled.div`
+  background-color: #393939;
+  color: #fff;
+  padding: 1.5em 1em;
+`;
+
+export const Screen: FunctionComponent<DisplayProps> = ({
+  value,
+  hasMemory,
+  expression,
+}) => {
   return (
-    <div className="text-right flex flex-col m-10 rounded-md border border-[#CBD5E1] h-34 p-10 justify-around">
-      <div className="text-8xl ">
-        {" "}
-        {formatOperand(previousOperand)}{" "}
-        <span className="text-red-500">{operation}</span>{" "}
-        {formatOperand(currentOperand)}
-      </div>
-    </div>
-  );
-}
+    <StyledDisplay>
+      <StyledIndicatorList>
+        {hasMemory && <span>M</span>}
 
-Display.defaultProps = {
-  currentOperand: "0",
-  previousOperand: null,
-  operation: null,
+        <StyledExpression>{expression}</StyledExpression>
+      </StyledIndicatorList>
+
+      <StyleScreen>{value}</StyleScreen>
+    </StyledDisplay>
+  );
 };
 
-export default Display;
+export default Screen;
