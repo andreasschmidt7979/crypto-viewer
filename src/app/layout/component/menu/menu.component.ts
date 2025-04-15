@@ -28,9 +28,9 @@ export class MenuComponent {
         routerLink: ['/pages'],
         items: [
           {
-            label: 'Landing',
-            icon: 'pi pi-fw pi-globe',
-            routerLink: ['/landing'],
+            label: 'Wheater',
+            icon: 'pi pi-fw pi-sun',
+            routerLink: ['/weather'],
           },
           {
             label: 'Auth',
@@ -62,11 +62,6 @@ export class MenuComponent {
             label: 'React Apps',
             icon: 'pi pi-fw pi-verified',
             routerLink: ['/pages/app-react-comp'],
-          },
-          {
-            label: 'Not Found',
-            icon: 'pi pi-fw pi-exclamation-circle',
-            routerLink: ['/pages/notfound'],
           },
           {
             label: 'Empty',
