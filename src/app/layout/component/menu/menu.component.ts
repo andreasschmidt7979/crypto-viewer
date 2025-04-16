@@ -30,7 +30,7 @@ export class MenuComponent {
           {
             label: 'Wheater',
             icon: 'pi pi-fw pi-sun',
-            routerLink: ['/weather'],
+            routerLink: ['pages/weather'],
           },
           {
             label: 'Auth',

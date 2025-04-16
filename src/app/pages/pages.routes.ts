@@ -3,10 +3,12 @@ import { DocumentationComponent } from './documentation/documentation.component'
 import { EmptyComponent } from './empty/empty.component';
 import { CoinListComponent } from './crypto-viewer/components/coin-list/coin-list.component';
 import { CoinDetailComponent } from './crypto-viewer/components/coin-detail/coin-detail.component';
+import { WeatherComponent } from './weather/app.weather';
 
 export default [
   { path: 'coin-list', component: CoinListComponent },
   { path: 'coin-detail/:id', component: CoinDetailComponent },
+  { path: 'weather', component: WeatherComponent },
   { path: 'documentation', component: DocumentationComponent },
   { path: 'empty', component: EmptyComponent },
   {
