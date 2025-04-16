@@ -4,7 +4,7 @@ import SearchEngine from "./SearchEngine.jsx";
 import Forecast from "./Forecast.jsx";
 
 import styles from "./styles.css";
-import "@fortawesome/fontawesome-free/css/all.min.css";
+// import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const WeatherStyle = {
   textalign: "center",
