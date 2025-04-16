@@ -1,2 +1,3 @@
 https://shijoshaji.hashnode.dev/create-angular-weatherapp-part-2
 https://github.com/shijoshaji/weatherApp
+https://rapidapi.com/hub
