@@ -10,21 +10,21 @@ import { Observable } from 'rxjs';
 export class WeatherAPIService {
   constructor(private http: HttpClient) {}
 
+  private baseURL = environment.baseURL;
+  
+
   fetchWeatherData(placeName: string): Observable<WeatherInterface> {
-    return this.http.get<WeatherInterface>(environment.baseURL, {
+    let apiUrl = this.baseURL+'city/'+ placeName+'/EN'; //'https://{this.baseURL}/city/landon/EN';
+    return this.http.get<WeatherInterface>(apiUrl, {
       headers: new HttpHeaders()
         .set(environment.XRapidAPIHostName, environment.XRapidAPIHostValue)
         .set(environment.XRapidAPIKeyName, environment.XRapidAPIKeyValue),
-      params: new HttpParams()
-        .set('q', placeName)
-        .set('units', 'imperial')
-        .set('mode', 'json'),
     });
   }
 
   getlocation(lat: any, long: any) {
     var geoAPI = `${environment.reverseGeoCodeURL}latitude=${lat}&longitude=${long}&localityLanguage=en`;
-
     return this.http.get<any>(geoAPI);
+
   }
 }

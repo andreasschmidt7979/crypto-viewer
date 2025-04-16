@@ -3,13 +3,13 @@
 
 export const environment = {
   production: false,
-  baseURL: 'https://community-open-weather-map.p.rapidapi.com/weather',
+  baseURL: 'https://open-weather13.p.rapidapi.com/',
   reverseGeoCodeURL:
     'https://api.bigdatacloud.net/data/reverse-geocode-client?',
   XRapidAPIHostName: 'X-RapidAPI-Host',
-  XRapidAPIHostValue: 'community-open-weather-map.p.rapidapi.com',
+  XRapidAPIHostValue: 'open-weather13.p.rapidapi.com',
   XRapidAPIKeyName: 'X-RapidAPI-Key',
-  XRapidAPIKeyValue: '4460db3033d5b332b50325334126eb3b14c23db4ea755e0abe4880d7302363bc',
+  XRapidAPIKeyValue: '37566892ffmsh66edd76cb1f630ap1fb6ccjsn25bfc352a8b3',
 };
 
 // console.log("I'm being initiated");

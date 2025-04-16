@@ -20,6 +20,7 @@ export class WeatherComponent implements OnInit {
   fetchData() {
     this.getWeather(this.cityName);
     this.cityName = '';
+    console.log("333e");
   }
 
   ngOnInit(): void {
@@ -27,11 +28,8 @@ export class WeatherComponent implements OnInit {
   }
 
   private getWeather(cityName: string) {
-    this.weatherService.fetchWeatherData(cityName).subscribe({
-      next: (response) => {
-        this.weatherData = response;
-      },
-    });
+    console.log("555Start");
+    this.weatherService.fetchWeatherData(cityName).subscribe({ next: (response) => {this.weatherData = response; },});
   }
 
   private getWeatherByGeoLocation() {
