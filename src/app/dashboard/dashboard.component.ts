@@ -9,11 +9,11 @@ import { RevenueStreamWidget } from './components/revenuestreamwidget';
 @Component({
   selector: 'app-dashboard',
   imports: [
-    StatsWidget,
-    RecentSalesWidget,
-    BestSellingWidget,
-    RevenueStreamWidget,
-    NotificationsWidget,
+    // StatsWidget,
+    // RecentSalesWidget,
+    // BestSellingWidget,
+    // RevenueStreamWidget,
+    // NotificationsWidget,
   ],
 
   templateUrl: './dashboard.component.html',

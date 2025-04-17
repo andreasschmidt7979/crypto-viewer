@@ -22,8 +22,8 @@ const navLinks: NavLinkType[] = [
     path: "/calculator",
   },
   {
-    name: "Wheather",
-    path: "/weather",
+    name: "PasswordGenerator",
+    path: "/passwordgenerator",
   },
   {
     name: "Back",

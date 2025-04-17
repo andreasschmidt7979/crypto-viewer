@@ -1,4 +1,66 @@
-<div class="grid grid-cols-12 gap-8">
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+  }
+
+  .circle {
+    position: relative;
+    width: 200px; /* Durchmesser des Kreises */
+    height: 200px; /* Durchmesser des Kreises */
+    border-radius: 50%;
+    animation: rotateCircle 10s linear infinite;
+  }
+
+  .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5em;
+    white-space: nowrap;
+    animation: colorChange 10s linear infinite;
+  }
+
+  @keyframes rotateCircle {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes colorChange {
+    0% {
+      color: red;
+    }
+    25% {
+      color: blue;
+    }
+    50% {
+      color: green;
+    }
+    75% {
+      color: orange;
+    }
+    100% {
+      color: red;
+    }
+  }
+</style>
+<body>
+  <div class="circle">
+    <div class="text">Willkommen auf der Webseite von Andreas Schmidt!</div>
+  </div>
+</body>
+
+<!-- <div class="grid grid-cols-12 gap-8">
   <app-stats-widget class="contents" />
   <div class="col-span-12 xl:col-span-6">
     <app-recent-sales-widget />
@@ -8,4 +70,4 @@
     <app-revenue-stream-widget />
     <app-notifications-widget />
   </div>
-</div>
+</div> -->

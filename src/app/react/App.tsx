@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import MyCalendar from "./calendar/MyCalendar";
 import Calculator from "./calculator/Calculator";
-import Weather from "./weather/Weather.jsx";
+import PasswordGenerator from "./passwordgenerator/PasswordGenerator";
 import { NavBar } from "./NavBar";
 
 const App = () => {
@@ -14,7 +14,7 @@ const App = () => {
         <Route path="/pages/app-react-comp" element={<MyCalendar />} />
         <Route path="/calendar" element={<MyCalendar />} />
         <Route path="/calculator" element={<Calculator />} />
-        <Route path="/weather" element={<Weather />} />
+        <Route path="/passwordgenerator" element={<PasswordGenerator />} />
       </Routes>
     </>
   );
