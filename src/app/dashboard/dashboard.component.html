@@ -3,60 +3,74 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: white;
-    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    background-color: #f0f0f0;
     overflow: hidden;
   }
 
-  .circle {
+  .text-container {
     position: relative;
-    width: 200px; /* Durchmesser des Kreises */
-    height: 200px; /* Durchmesser des Kreises */
-    border-radius: 50%;
-    animation: rotateCircle 10s linear infinite;
+    width: 90vw;
+    height: 90vh;
   }
 
-  .text {
+  .appearing-text {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 1.5em;
-    white-space: nowrap;
-    animation: colorChange 10s linear infinite;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+    opacity: 0; /* Anfangs unsichtbar */
+    animation: appear 5s forwards, disappear 5s forwards 6s infinite; /* Erscheinen nach 0s, Verschwinden nach 3s */
   }
 
-  @keyframes rotateCircle {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-
-  @keyframes colorChange {
+  @keyframes appear {
     0% {
-      color: red;
-    }
-    25% {
-      color: blue;
-    }
-    50% {
-      color: green;
-    }
-    75% {
-      color: orange;
+      opacity: 0;
     }
     100% {
-      color: red;
+      opacity: 1;
+    }
+  }
+
+  @keyframes disappear {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
     }
   }
 </style>
 <body>
-  <div class="circle">
-    <div class="text">Willkommen auf der Webseite von Andreas Schmidt!</div>
+  <div class="text-container">
+    <span class="appearing-text" style="top: 10%; left: 15%; color: red"
+      >Hier</span
+    >
+    <span
+      class="appearing-text"
+      style="top: 40%; left: 60%; color: blue; animation-delay: 0.5s"
+      >erscheint</span
+    >
+    <span
+      class="appearing-text"
+      style="top: 70%; left: 25%; color: green; animation-delay: 1s"
+      >Text</span
+    >
+    <span
+      class="appearing-text"
+      style="top: 20%; left: 80%; color: orange; animation-delay: 1.5s"
+      >an</span
+    >
+    <span
+      class="appearing-text"
+      style="top: 55%; left: 10%; color: purple; animation-delay: 2s"
+      >verschiedenen</span
+    >
+    <span
+      class="appearing-text"
+      style="top: 85%; left: 70%; color: brown; animation-delay: 2.5s"
+      >Positionen</span
+    >
   </div>
 </body>
 

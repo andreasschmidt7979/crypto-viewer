@@ -18,9 +18,7 @@ export class MenuComponent {
     this.model = [
       {
         label: 'Home',
-        items: [
-          { label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] },
-        ],
+        items: [{ label: 'Home', icon: 'pi pi-fw pi-home', routerLink: ['/'] }],
       },
       {
         label: 'Pages',
