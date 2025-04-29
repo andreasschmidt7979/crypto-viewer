@@ -76,12 +76,12 @@ export class MenuComponent {
             icon: 'pi pi-fw pi-book',
             routerLink: ['/documentation'],
           },
-          {
-            label: 'View Source',
-            icon: 'pi pi-fw pi-github',
-            url: 'https://github.com/andreasschmidt7979/crypto-viewer/tree/BranchPrimeNG',
-            target: '_blank',
-          },
+          // {
+          //   label: 'View Source',
+          //   icon: 'pi pi-fw pi-github',
+          //   url: 'https://github.com/andreasschmidt7979/crypto-viewer/tree/BranchPrimeNG',
+          //   target: '_blank',
+          // },
         ],
       },
     ];
