@@ -8,7 +8,6 @@ const port = 3000;
 
 const configuration = new Configuration({
   apiKey:
-    "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",
 });
 const openai = new OpenAIApi(configuration);
 
@@ -38,10 +37,6 @@ app.listen(port, () => {
 // import express from "express";
 // import { json } from "body-parser";
 // import openai from "openai";
-
-// //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
-// const OPENAI_API_KEY =
-//   "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";
 
 // openai.apiKey = OPENAI_API_KEY;
 // const app = express();
