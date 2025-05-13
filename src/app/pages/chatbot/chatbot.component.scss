@@ -1,0 +1,19 @@
+.message {
+    // ...
+  
+    &.generating {
+      &::after {
+        content: '▋';
+        animation: fade-cursor ease-in-out 500ms infinite alternate;
+      }
+    }
+  }
+  
+  @keyframes fade-cursor {
+    from {
+      opacity: 25%;
+    }
+    to {
+      opacity: 100%;
+    }
+  }

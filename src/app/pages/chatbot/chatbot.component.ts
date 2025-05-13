@@ -1,35 +1,36 @@
-import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { OpenAiApiService } from './services/open-ai-api.service';
+import { Component, effect, inject } from '@angular/core';
+import { NgClass } from '@angular/common';
+import { MessageService } from './message.service';
+import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-chatbot',
-  imports: [],
+  standalone: true,
+  imports: [NgClass, FormsModule],
   templateUrl: './chatbot.component.html',
   styleUrl: './chatbot.component.scss',
 })
 export class ChatbotComponent {
-  userMessage!: string;
-  assistantReply!: string;
-  chatMessages: { role: string; content: string }[] = [];
+  private readonly messageService = inject(MessageService);
 
-  constructor(
-    private http: HttpClient,
-    private openAiApiService: OpenAiApiService
-  ) {}
+  readonly messages = this.messageService.messages;
+  readonly generatingInProgress = this.messageService.generatingInProgress;
 
-  sendMessage() {
-    const userMessage = this.userMessage;
-    this.chatMessages.push({ role: 'user', content: userMessage });
-    this.openAiApiService
-      .sendMessage(this.userMessage)
-      .subscribe((response) => {
-        this.assistantReply = response.reply;
-        this.chatMessages.push({
-          role: 'assistant',
-          content: this.assistantReply,
-        });
-        this.userMessage = '';
-      });
+  private readonly scrollOnMessageChanges = effect(() => {
+    // run this effect on every `messages` change
+    this.messages();
+
+    // scroll after the messages render
+    setTimeout(() =>
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth',
+      })
+    );
+  });
+
+  sendMessage(form: NgForm, messageText: string): void {
+    this.messageService.sendMessage(messageText);
+    form.resetForm();
   }
 }

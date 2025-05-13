@@ -23,7 +23,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatTableModule,
     MatSortModule,
     MatSelectModule,
-    MatToolbarModule
+    MatToolbarModule,
   ],
   templateUrl: './coin-list.component.html',
   styleUrl: './coin-list.component.css',
