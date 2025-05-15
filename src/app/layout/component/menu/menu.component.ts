@@ -62,6 +62,11 @@ export class MenuComponent {
             routerLink: ['/pages/app-react-comp'],
           },
           {
+            label: 'Chatbot',
+            icon: 'pi pi-fw pi-verified',
+            routerLink: ['/pages/app-chatbot'],
+          },
+          {
             label: 'Empty',
             icon: 'pi pi-fw pi-circle-off',
             routerLink: ['/pages/empty'],

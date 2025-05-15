@@ -1,6 +1,6 @@
 import { Component, effect, inject } from '@angular/core';
 import { NgClass } from '@angular/common';
-import { MessageService } from './message.service';
+import { MessageService } from './services/massage.service';
 import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
