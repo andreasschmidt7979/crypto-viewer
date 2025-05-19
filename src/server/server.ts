@@ -35,6 +35,10 @@ server.get('/', (req, res) => {
   res.send('hello wworld');
 });
 
+server.get('/message', (req, res) => {
+  res.send('hello message');
+});
+
 server.post('/message', async (req: Request, res: Response) => {
   const prompt: string = req.body;
 

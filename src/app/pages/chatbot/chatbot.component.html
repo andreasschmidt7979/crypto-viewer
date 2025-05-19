@@ -1,27 +1,4 @@
-<p>chatbot works!</p>
-<h1>🤖 Angular Generative AI Demo</h1>
-
-@for (message of messages(); track message.id) {
-<pre
-  class="message"
-  [ngClass]="{
-    'from-user': message.fromUser,
-    generating: message.generating
-  }"
-  >{{ message.text }}</pre
->
-}
-
-<form #form="ngForm" (ngSubmit)="sendMessage(form, form.value.message)">
-  <input
-    name="message"
-    placeholder="Type a message"
-    ngModel
-    required
-    autofocus
-    [disabled]="generatingInProgress()"
-  />
-  <button type="submit" [disabled]="generatingInProgress() || form.invalid">
-    Send
-  </button>
-</form>
+<section [ngClass]="'app-container'">
+  <app-message-panel [messages]="data" [loading]="loading"></app-message-panel>
+  <app-user-input (sendMessageEmitter)="getMessage($event)"></app-user-input>
+</section>
