@@ -1,4 +1,115 @@
-<div class="search">
+<div class="row justify-content-md-center" style="padding: 20px">
+  <div class="card" style="width: 25rem">
+    <div class="card-body">
+      <div class="row g-2">
+        <div class="col-md-6">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="City"
+            aria-label="First name"
+            id="city"
+            [(ngModel)]="city"
+          />
+        </div>
+        <div class="col-md-6">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Country Code"
+            aria-label="Last name"
+            id="countryCode"
+            [(ngModel)]="countryCode"
+          />
+        </div>
+        <div class="col-md-6">
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="getWeather();getForecastData()"
+          >
+            Get Weather
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row justify-content-md-center">
+  <div *ngIf="weatherData" class="card" style="width: 70%">
+    <div class="card-header">
+      <h2 class="mb-0">
+        {{ weatherData.name }}, {{ weatherData.sys.country }}
+      </h2>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-2">
+          <div
+            class="d-flex flex-column justify-content-center align-items-center"
+          >
+            <img
+              [src]="'https://openweathermap.org/img/wn/' + weatherData.weather[0].icon + '@2x.png'"
+              alt="{{ weatherData.weather[0].description }}"
+              class="img-fluid"
+            />
+            <p class="my-3">{{ weatherData.weather[0].description }}</p>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div
+            class="d-flex flex-column justify-content-center align-items-center"
+          >
+            <h2 class="my-0">{{ weatherData.main.temp }}°C</h2>
+            <p class="my-0">
+              <strong>Low:</strong> {{ weatherData.main.temp_min }} °C
+            </p>
+            <p class="my-0">
+              <strong>Max:</strong> {{ weatherData.main.temp_max }} °C
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div
+            class="d-flex flex-column justify-content-center align-items-center"
+          >
+            <p class="my-0">
+              <strong>Humidity:</strong> {{ weatherData.main.humidity }}%
+            </p>
+            <p class="my-0">
+              <strong>Pressure:</strong> {{ weatherData.main.pressure }} hPa
+            </p>
+            <p class="my-0">
+              <strong>Wind:</strong> {{ weatherData.wind.speed }} km/h
+            </p>
+          </div>
+        </div>
+        <div id="map"></div>
+      </div>
+    </div>
+    <hr />
+    <h2>5-day Forecast</h2>
+    <div class="row justify-content-md-center">
+      <div
+        class="col-md-2 d-flex flex-column justify-content-center align-items-center"
+        *ngFor="let forecast of forecastData"
+      >
+        <p>{{ forecast.dt_txt | date:'EEE' }}</p>
+        <img
+          [src]="'https://openweathermap.org/img/wn/' + forecast.weather[0].icon + '.png'"
+        />
+        <p class="my-0">{{ forecast.weather[0].description }}</p>
+        <p class="my-0">
+          T:{{ forecast.main.temp_max }}°
+          <small class="text-muted">H:{{ forecast.main.humidity }}%</small>
+        </p>
+        <br />
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="search">
   <form #form="ngForm" (submit)="fetchData()">
     <input
       type="text"
@@ -73,4 +184,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->

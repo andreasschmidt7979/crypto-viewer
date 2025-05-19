@@ -15,7 +15,8 @@
       {
         "ignore": [
           "user-select",
-          "hyphens"
+          "hyphens",
+          "min-height: auto"
         ]
       }
     ],
