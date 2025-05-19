@@ -10,12 +10,12 @@ export class WeatherService {
   constructor(private http: HttpClient) {}
   getWeather(city: string, countryCode: string) {
     // Replace YOUR_API_KEY with your actual API key from OpenWeatherMap
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city},${countryCode}&units=metric&appid=5fb663bc385b723bc97ce10fe43141c4`;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city},${countryCode}&units=metric&appid=03d4c1b3999231e0ba933cb7d6dd7788`;
     console.log('today weather');
     return this.http.get(apiUrl);
   }
   getForecastData(city: string, countryCode: string) {
-    const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city},${countryCode}&units=metric&appid=5fb663bc385b723bc97ce10fe43141c4`;
+    const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city},${countryCode}&units=metric&appid=03d4c1b3999231e0ba933cb7d6dd7788`;
     console.log('5day weather');
     return this.http.get(url).pipe(
       map((data: any) => {
